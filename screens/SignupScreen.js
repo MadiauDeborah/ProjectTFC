@@ -1,10 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
+import AuthScreen from "./AuthScreen";
 
-const AuthScreen = ({navigation}) => {
-    const handlePress = () =>{
-        navigation.navigate('Signup')
-    }
+const SignupScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.logoContainer}>
@@ -13,14 +11,11 @@ const AuthScreen = ({navigation}) => {
             <View style={styles.formContainer}>
                 <TextInput style={styles.input} placeholder="Nom" />
                 <TextInput style={styles.input} placeholder="Password" secureTextEntry />
+                <TextInput style={styles.input} placeholder="Confirm Password" secureTextEntry />
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Sign in</Text>
+                    <Text style={styles.buttonText}>Sign up</Text>
                 </TouchableOpacity>
-                <Text style={styles.orText}>- Or sign in with -</Text>
-
-                <Text style={styles.signupText}>
-                    Don't have an account? <Text style={styles.signupLink} onPress={handlePress}>Sign up</Text>
-                </Text>
+                <Text style={styles.orText}>- Or sign up with -</Text>
             </View>
         </View>
     );
@@ -46,10 +41,10 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         borderColor: '#ccc',
-        borderWidth: 2,
+        borderWidth: 1,
         marginBottom: 10,
         paddingHorizontal: 10,
-        borderRadius: 8,
+        borderRadius: 5,
     },
     button: {
         backgroundColor: '#0056A6',
@@ -71,20 +66,5 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginBottom: 10,
     },
-    signupText: {
-        textAlign: 'center',
-    },
-    signupLink: {
-        color: '#0056A6',
-    },
 });
-export default AuthScreen;
-
-
-
-
-
-
-
-
-
+export default SignupScreen;
